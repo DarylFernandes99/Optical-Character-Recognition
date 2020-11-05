@@ -16,12 +16,12 @@ except RuntimeError as e:
 #Importing dataset
 import pandas as pd
 
-dataset = pd.read_csv('C:/Users/daryl/Desktop/ip/emnist/emnist-byclass-train.csv', header = None)
+dataset = pd.read_csv('C:/Users/user/Desktop/ip/emnist/emnist-byclass-train.csv', header = None)
 X_train = dataset.iloc[0:, 1:].values
 y_train = dataset.iloc[0:, :1].values
 
 
-dataset = pd.read_csv('C:/Users/daryl/Desktop/ip/emnist/emnist-byclass-test.csv', header = None)
+dataset = pd.read_csv('C:/Users/user/Desktop/ip/emnist/emnist-byclass-test.csv', header = None)
 X_test = dataset.iloc[:, 1:].values
 y_test = dataset.iloc[:, :1].values
 

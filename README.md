@@ -3,9 +3,16 @@ In this project, text is extracted from an image and is converted into text form
 
 <h4>Dataset Used:</h4>Extended MNIST (Letters) :- emnist-byclass-train.csv, emnist-byclass-test.csv
 
-<h4>Kaggle Link:</h4>https://www.kaggle.com/crawford/emnist
+<h4>Kaggle Link for Dataset:</h4>https://www.kaggle.com/crawford/emnist
 
 <h4>Link to Published Paper:</h4>https://www.irjet.net/archives/V7/i5/IRJET-V7I5964.pdf
+
+<h4>System Configuration</h4>
+<ul>
+  <li>Processor: Intel i7 9th gen</li>
+  <li>GPU: Nvidia RTX 2060 Mobile</li>
+  <li>RAM: 16GB</li>
+</ul>
 
 <h4>Softwares used for this project</h4>
 <ol>
@@ -21,4 +28,4 @@ In this project, text is extracted from an image and is converted into text form
 </ol>
 
 <h3>CNN Architecture used</h3>
-<img src="https://github.com/DragonSinMeliodas99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers" width="800"></img>
+<img src="https://github.com/DragonSinMeliodas99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers" width="900"></img>

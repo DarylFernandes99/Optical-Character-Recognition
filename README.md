@@ -21,7 +21,7 @@ In this project, text is extracted from an image and is converted into text form
 </ol>
 
 <h3>Steps to run the project</h3>
-  **Change the File paths to their respective paths before exuction.**
+  <b>**Change the File paths to their respective paths before exuction.**</b>
 <ol>
   <li>Run csv_to_image(emnist).py to convert from csv to image format.</li>
   <li>Run letters(emnist).py to train the CNN model on EMNIST dataset.</li>

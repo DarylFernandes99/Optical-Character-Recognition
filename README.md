@@ -14,4 +14,4 @@ In this project, text is extracted from an image and is converted into text form
   <li>Run bounding box.py to predict to extract text from image.</li>
 </ol>
 
-<img src="" alt="CNN layers"></img>
+<img src="https://github.com/DragonSinMeliodas99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers"></img>

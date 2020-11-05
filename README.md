@@ -7,6 +7,12 @@ In this project, text is extracted from an image and is converted into text form
 
 <h4>Link to Published Paper:</h4>https://www.irjet.net/archives/V7/i5/IRJET-V7I5964.pdf
 
+<h4>Softwares used for this project</h4>
+<ol>
+  <li>Python 3.7</li>
+  <li>Tensorflow 2.2.1</li>
+</ol>
+
 <h3>Steps to run the project</h3>
 <ol>
   <li>Run csv_to_image(emnist).py to convert from csv to image format.</li>
@@ -14,4 +20,5 @@ In this project, text is extracted from an image and is converted into text form
   <li>Run bounding box.py to predict to extract text from image.</li>
 </ol>
 
-<img src="https://github.com/DragonSinMeliodas99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers"></img>
+<h3>CNN Architecture used</h3>
+<img src="https://github.com/DragonSinMeliodas99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers" width="800"></img>

@@ -12,7 +12,7 @@ values =  ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
            'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-dataset = pd.read_csv('C:/Users/daryl/Desktop/ip/emnist/emnist-byclass-test.csv', header = None)
+dataset = pd.read_csv('C:/Users/user/Desktop/ip/emnist/emnist-byclass-test.csv', header = None)
 
 label = dataset.iloc[:,:1].values
 images = dataset.iloc[:,1:].values

@@ -1,5 +1,5 @@
 # Optical-Character-Recognition
-In this project, text is extracted from an image and is converted into text format. It works on both typed and hadwritten text, but only works where text is in Capital Letters.
+In this project, text is extracted from an image and is converted into text format. It works on both typed and handwritten text, but only works where text is in Block Letters.
 
 <h4>Dataset Used:</h4>Extended MNIST (Letters) :- emnist-byclass-train.csv, emnist-byclass-test.csv
 

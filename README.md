@@ -29,4 +29,4 @@ In this project, text is extracted from an image and is converted into text form
 </ol>
 
 <h3>CNN Architecture used</h3>
-<img src="../main/Layers.png" alt="CNN layers" width="900"></img>
+<img src="https://github.com/DarylFernandes99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers" width="900"></img>

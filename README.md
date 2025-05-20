@@ -1,32 +1,140 @@
-# Optical-Character-Recognition
-In this project, text is extracted from an image and is converted into text format. It works on both typed and handwritten text, but only works where text is in Block Letters.
+# Optical Character Recognition (OCR)
 
-<h4>Dataset Used:</h4>Extended MNIST (Letters) :- emnist-byclass-train.csv, emnist-byclass-test.csv
+A CNN-based optical character recognition system that extracts text from images. Works with both typed and handwritten text in block letters.
 
-<h4>Kaggle Link for Dataset:</h4>https://www.kaggle.com/crawford/emnist
+[![CNN Architecture](Layers.png)](Layers.png)
 
-<h4>Link to Published Paper:</h4>https://www.irjet.net/archives/V7/i5/IRJET-V7I5964.pdf
+## 📋 Overview
 
-<h4>System Configuration</h4>
-<ul>
-  <li>Processor: Intel i7 9th gen</li>
-  <li>GPU: Nvidia RTX 2060 Mobile</li>
-  <li>RAM: 16GB</li>
-</ul>
+This project utilizes a Convolutional Neural Network (CNN) to identify and extract text from images. The system:
 
-<h4>Softwares used for this project</h4>
-<ol>
-  <li>Python 3.7</li>
-  <li>Tensorflow 2.2.1</li>
-</ol>
+- Processes images containing text
+- Identifies individual characters using bounding boxes
+- Converts the recognized characters to digital text format
+- Supports both typed and handwritten text in block letters
 
-<h3>Steps to run the project</h3>
-  <b>**Change the File paths in the codes to their respective paths before execution.**</b>
-<ol>
-  <li>Run csv_to_image(emnist).py to convert from csv to image format.</li>
-  <li>Run letters(emnist).py to train the CNN model on EMNIST dataset.</li>
-  <li>Run bounding box.py to predict to extract text from image.</li>
-</ol>
+## 🔍 Features
 
-<h3>CNN Architecture used</h3>
-<img src="https://github.com/DarylFernandes99/Optical-Character-Recognition/blob/main/Layers.png" alt="CNN layers" width="900"></img>
+- Image preprocessing and text segmentation
+- Character recognition using a trained CNN model
+- Support for all alphanumeric characters (A-Z, a-z, 0-9)
+- Multi-level contour detection (sentences → words → letters)
+- Robust image processing with thresholding and dilation
+- Data augmentation for improved model training
+
+## 🧠 Model Architecture
+
+The system employs a sophisticated multi-layer CNN with the following architecture:
+
+- **Input Layer**: 128×128×1 grayscale images
+- **Convolutional Layers**:
+  - Conv2D (32 filters, 3×3 kernel) → ReLU → MaxPooling (2×2) → Dropout (0.2)
+  - Conv2D (64 filters, 3×3 kernel) → ReLU → MaxPooling (2×2) → Dropout (0.2)
+  - Conv2D (128 filters, 3×3 kernel) → ReLU → MaxPooling (2×2) → Dropout (0.2)
+  - Conv2D (256 filters, 3×3 kernel) → ReLU → MaxPooling (2×2) → Dropout (0.2)
+- **Fully Connected Layers**:
+  - Flatten → Dense (128 neurons) → ReLU → Dropout (0.2)
+  - Output Layer: Dense (52 neurons) → Softmax
+
+The model is trained using the Adam optimizer with categorical cross-entropy loss function.
+
+## 🛠️ Requirements
+
+- Python 3.7+
+- TensorFlow 2.2.1+
+- OpenCV
+- NumPy
+- Matplotlib
+- PIL (Python Imaging Library)
+- Keras
+- Pandas
+
+## 📊 Dataset
+
+- **Dataset Used**: Extended MNIST (EMNIST) for alphanumeric character classification
+- **Files**: emnist-byclass-train.csv, emnist-byclass-test.csv
+- **Character Set**: 62 classes (10 digits, 26 uppercase letters, 26 lowercase letters)
+- **Source**: [EMNIST Dataset on Kaggle](https://www.kaggle.com/crawford/emnist)
+
+## 🚀 Getting Started
+
+### Setup Instructions
+
+1. Clone this repository
+2. Download the EMNIST dataset from Kaggle
+3. Create the following directory structure:
+   ```
+   Project/
+   ├── Dataset/
+   │   ├── train_set/
+   │   │   ├── U{A-Z}/
+   │   │   ├── {a-z}/
+   │   │   └── {0-9}/
+   │   └── test_set/
+   │       ├── U{A-Z}/
+   │       ├── {a-z}/
+   │       └── {0-9}/
+   └── sentence/
+       └── words/
+           └── letter/
+   ```
+4. **Important**: Update file paths in all Python scripts to match your environment
+
+### Running the Project
+
+1. First convert CSV data to images:
+   ```
+   python csv_to_image\(emnist\).py
+   ```
+   This script:
+   - Reads the EMNIST CSV file
+   - Converts each row to a 28×28 pixel image
+   - Organizes images into appropriate class folders
+   - Corrects image orientation (flips and rotates as needed)
+
+2. Train the CNN model on the EMNIST dataset:
+   ```
+   python letters\(emnist\).py
+   ```
+   This script:
+   - Builds the CNN architecture
+   - Uses data augmentation (rescaling, shearing, zooming) for training
+   - Trains for 25 epochs with a batch size of 64
+   - Saves the trained model as 'letter(only).h5'
+
+3. Extract text from your images:
+   ```
+   python "bounding box.py"
+   ```
+   This script:
+   - Loads the trained model
+   - Processes input images to detect text regions
+   - Applies hierarchical contour detection (sentences → words → letters)
+   - Predicts characters using the trained model
+   - Outputs the recognized text
+
+## 🔄 Text Extraction Process
+
+The text extraction follows a hierarchical approach:
+1. **Preprocessing**: Grayscale conversion, thresholding, and dilation
+2. **Line Detection**: Identifies text lines using contour detection
+3. **Word Detection**: Segments each line into individual words
+4. **Character Detection**: Isolates individual characters from each word
+5. **Character Recognition**: Classifies each character using the trained CNN
+6. **Text Assembly**: Reconstructs the detected characters into words and sentences
+
+## 📝 Research Publication
+
+This project has been published in a research paper:
+- [IRJET Publication](https://www.irjet.net/archives/V7/i5/IRJET-V7I5964.pdf)
+
+## 📄 License
+
+This project is licensed under the terms of the included LICENSE file.
+
+## 🖥️ Development Environment
+
+- **Processor**: Intel i7 9th gen
+- **GPU**: Nvidia RTX 2060 Mobile
+- **RAM**: 16GB
+- **Software**: Python 3.7, TensorFlow 2.2.1
